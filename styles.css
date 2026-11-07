@@ -1,0 +1,180 @@
+/* Car Repair, in Plain English — static site styles.
+   One file, no external requests, works offline. */
+
+:root {
+  --bg: #faf9f6;
+  --fg: #2b2b2b;
+  --muted: #6b6b6b;
+  --accent: #1f5f5b;
+  --accent-soft: #eef4f3;
+  --accent-warm: #b3541e;
+  --border: #ddd8cf;
+  --code-bg: #efede8;
+  --table-head: #e7efe8;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.65;
+  font-size: 1.0625rem;
+}
+
+.site-header {
+  background: var(--accent);
+  color: #fff;
+  padding: 1.4rem 1.5rem 1.1rem;
+}
+
+.brand {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 0.01em;
+}
+
+.brand span { color: #bcd9d4; font-style: italic; }
+
+.tagline {
+  margin: 0.3rem 0 0;
+  color: #d5e6e3;
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
+.site-nav {
+  background: var(--accent-soft);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.15rem;
+  padding: 0.4rem 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.site-nav a {
+  color: var(--accent);
+  text-decoration: none;
+  padding: 0.35rem 0.7rem;
+  border-radius: 6px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.92rem;
+  white-space: nowrap;
+}
+
+.site-nav a:hover { background: #dde9e7; }
+.site-nav a.active { background: var(--accent); color: #fff; }
+
+main.content {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 2rem 1.4rem 3rem;
+}
+
+main.content h1,
+main.content h2,
+main.content h3 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: var(--accent);
+  line-height: 1.25;
+}
+
+main.content h1 {
+  font-size: 1.9rem;
+  margin-top: 0.4rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 3px solid var(--accent-soft);
+}
+
+main.content h2 { font-size: 1.35rem; margin-top: 2rem; }
+main.content h3 { font-size: 1.12rem; margin-top: 1.6rem; }
+
+main.content a { color: var(--accent-warm); }
+main.content a:hover { text-decoration: underline; }
+
+main.content code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.88em;
+  background: var(--code-bg);
+  border-radius: 4px;
+  padding: 0.1em 0.35em;
+}
+
+main.content pre {
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.9rem 1rem;
+  overflow-x: auto;
+  line-height: 1.45;
+  font-size: 0.85rem;
+}
+
+main.content pre code {
+  background: none;
+  padding: 0;
+}
+
+main.content table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.2rem 0;
+  font-size: 0.93rem;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+main.content th,
+main.content td {
+  border: 1px solid var(--border);
+  padding: 0.45rem 0.6rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+main.content th { background: var(--table-head); }
+main.content tbody tr:nth-child(even) { background: #f3f1ec; }
+
+main.content blockquote {
+  border-left: 4px solid var(--accent);
+  margin: 1.2rem 0;
+  padding: 0.5rem 1.1rem;
+  background: var(--accent-soft);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+}
+
+main.content blockquote p { margin: 0.4rem 0; }
+
+main.content hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+
+main.content ul, main.content ol { padding-left: 1.4rem; }
+main.content li { margin: 0.3rem 0; }
+
+main.content em { color: #4c4c44; }
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  background: #f3f1ec;
+  color: var(--muted);
+  padding: 1.2rem 1.5rem 2rem;
+  font-size: 0.88rem;
+  text-align: center;
+}
+
+.site-footer a { color: var(--accent); }
+
+@media (max-width: 640px) {
+  body { font-size: 1rem; }
+  main.content { padding: 1.4rem 1rem 2.5rem; }
+  main.content h1 { font-size: 1.55rem; }
+  main.content table { font-size: 0.85rem; }
+}
